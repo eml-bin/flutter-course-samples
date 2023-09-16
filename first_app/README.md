@@ -1,4 +1,4 @@
-<h1>first_app: Roll dice App 🎲</h1>
+<h5>first_app: Roll dice App 🎲</h5>
 
 ## Objectives
 
@@ -10,3 +10,6 @@
 ### Description
 
 Roll dice app where you tap and a random dice number appears!
+
+
+# Notes
