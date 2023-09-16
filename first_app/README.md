@@ -1,6 +1,6 @@
 <h1>first_app: Roll dice App 🎲</h1>
 
-<h4> <Objectives 🌟> </h4>
+<h3> Objectives 🌟 </h3>
 
 - Get familiar with Flutter & Dart fundamentals
     * Basic Syntax & Features
