@@ -1,4 +1,4 @@
-<h5>first_app: Roll dice App 🎲</h5>
+<h2>first_app: Roll dice App 🎲</h2>
 
 ## Objectives
 
