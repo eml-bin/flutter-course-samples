@@ -52,7 +52,7 @@ void add({a, b}) { // a & b are named parameters (because of the curly braces)
 add(b: 5, a: 10); // 5 is used as a value for b, because it's assigned to that name; a = 10
 ```
 
-** Positional parameters are required and must not be omitted - on the other hand, named arguments are optional and can be omitted. **
+<h3>❗ Positional parameters are required and must not be omitted - on the other hand, named arguments are optional and can be omitted. ❗</h3>
 
 🟢 Positional arguments can be made optional by wrapping them with square brackets ([]):
 ```
