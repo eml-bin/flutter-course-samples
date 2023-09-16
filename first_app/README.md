@@ -3,6 +3,9 @@
 ## Objectives
 
 - Get familiar with Flutter & Dart fundamentals
+    * Basic Syntax & Features
+    * Understanding & Writing Flutter and Dart Code
+    * Working with Flutter widgets
 
 ### Description
 
