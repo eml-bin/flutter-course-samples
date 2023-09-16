@@ -7,9 +7,11 @@
     * Understanding & Writing Flutter and Dart Code
     * Working with Flutter widgets
 
-<h4> Description 📄 </h4>
+<h3> Description 📄 </h3>
 
 Roll dice app where you tap and a random dice number appears!
+
+-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
 
 <h4> Notes 📝 </h4>
 
