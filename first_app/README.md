@@ -11,7 +11,7 @@
 
 Roll dice app where you tap and a random dice number appears!
 
--.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
+--
 
 <h4> Notes 📝 </h4>
 
@@ -28,7 +28,7 @@ Roll dice app where you tap and a random dice number appears!
 
 --
 
-🔵 Flutter Widgets
+🔵 Flutter Widgets I
 
 MaterialApp. Core widget, used as starting point for build a Flutter App
 
@@ -82,3 +82,32 @@ void add({required a, required b}) { // a & b are no longer optional
   print(a + b); 
 }  
 ```
+
+--
+
+🔵 Flutter Widgets II
+
+MainApp. Entrypoint of Tree-Widgets (Root Widget)
+Scaffold. Screen Layout Widget (You can add styling)
+Text. Display Text on Screen
+
+🟡 VSCode Shortcuts
+
+Refactor. Ctrl + shift + R
+Format Document. Alt + shift + F
+  * To use format you need to indicate to IDE the end of widget with a comma (,)
+
+--
+
+<h3>❗Recommended to always add these commas after closing parenthesis❗</h3>
+
+🔵 Dart Types
+
+* All values are of certain Types
+* More than one Type is possible & Common
+
+Examples:
+- 'Hi' -> String -> Object
+- MaterialApp -> MaterialApp -> Widget -> Object
+
+Object. The base value on Dart
