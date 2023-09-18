@@ -117,7 +117,7 @@ Object. The base value on Dart
 Container. Useful Widget for configuring styling and layout settings
   * Container not support `const` parent widget 
 
-🔵 Separate Widgets
+🔵 Separate Widgets (Classes)
 
 For separating big widgets, Dart use classes 
 
@@ -131,3 +131,8 @@ For separating big widgets, Dart use classes
 * Objects help with organizing data & separating logic
 
 <h3>❗Objects are built bases on classes❗</h3>
+
+🔵 Separate Widgets (Files with classes)
+
+* You need to use `snake_case` style when you separate your widget class into file
+    Example: `gradient_container.dart`
