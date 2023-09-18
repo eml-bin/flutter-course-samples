@@ -14,9 +14,9 @@ void main() {
 
   // using const optmitize runtime performance
   runApp(
-    const MaterialApp(
+    MaterialApp(
       home: Scaffold(
-        body: GradientContainer(),
+        body: GradientContainer.sunset(),
       ),
     ),
   );
