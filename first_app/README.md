@@ -140,3 +140,51 @@ For separating big widgets, Dart use classes
 🔵 `this` keyword in Dart
 
 * `this` is a keyword used inside of classes, can refer the class itself or refer to the object
+
+🔵 Column & Row Flutter Widgets
+
+* Column. Allow to render multiple widgets, multiple children above each other (Vertically)
+* Row. Allow render multiple widgets, but next to each other (Horizontally)
+
+🔵 Flutter Buttons
+
+* ElevatedButton. Button with background color and a slight shadow
+* OutlinedButton. Button without background color but a border
+* TextButton. Button with simple pressable text
+
+🔵 Anonymous Function Dart
+
+* Sintaxis
+`() {}`
+```() {
+    ...
+}
+```
+TextButton(onPressed: >> () {} <<, child: const Text("Roll Dice"))
+
+🔵 Flutter more Widgets
+SizedBox. Create a box of a certain size, you can add a child widget inside box
+    * SizedBox has fixed width and height 
+EdgeInsets. Allow to set a padding
+
+
+🔵 Flutter StatelessWidget & StatefulWidget
+
+StatelessWidget
+* Normally you use this Widget when you dont need an `state` (data)
+
+StatefulWidget
+* Allow to manage `state` (data) inside of them...
+    - State is data that may change over time and that should impact the rendered UI
+
+🔵 More about StatefulWidget
+
+* Needs a constructor called `createState()` that returns `State<>` generic object `<>`
+* Always work with two classes 
+
+    Example
+    1. class <ClassName> extends StatefulWidget { ... }
+    2. class _<ClassName>State extends State<ClassName> { ... }
+        * This private class needs the build constructor `build()`
+
+* `setState()` function its necessary when you need to reflect changes on UI
