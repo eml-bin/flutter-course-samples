@@ -172,10 +172,19 @@ EdgeInsets. Allow to set a padding
 
 StatelessWidget
 * Normally you use this Widget when you dont need an `state` (data)
+* Don't manage any internal data
+* Only update the screen if parent widgets are updated ("re-rendered")
+
+〰️*Special Note*: Should be your default: Use as often as possible
 
 StatefulWidget
 * Allow to manage `state` (data) inside of them...
     - State is data that may change over time and that should impact the rendered UI
+
+* Do manage internal data ("state")
+* When state changes, the Widget is re-rendered & UI is updated
+
+〰️*Special Note*: Use whenever you have changing data that should cause UI updates
 
 🔵 More about StatefulWidget
 
