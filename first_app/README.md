@@ -136,3 +136,7 @@ For separating big widgets, Dart use classes
 
 * You need to use `snake_case` style when you separate your widget class into file
     Example: `gradient_container.dart`
+
+🔵 `this` keyword in Dart
+
+* `this` is a keyword used inside of classes, can refer the class itself or refer to the object

@@ -4,8 +4,8 @@ import 'package:first_app/styled_text.dart';
 // Using variables inside Widget Classes
 
 // `var` variable because they can change   
-var startAlignment = Alignment.topLeft;
-var endAlignment = Alignment.bottomRight; 
+const startAlignment = Alignment.topLeft;
+const endAlignment = Alignment.bottomRight; 
 
 // GradientContainer. Widget for separate Gradient background of screen
 //    * StatelessWidget. Flutter class for built a widget
@@ -19,10 +19,10 @@ class GradientContainer extends StatelessWidget {
   Widget build(context) {
     return Container(
       // We can't use `const` here because the new variables `startAlignment` `endAlignment` are not locked 
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         gradient: LinearGradient(
           // Here yes, because List of Colors are the same always, are locked
-          colors: const [
+          colors: [
             Color.fromARGB(255, 0, 77, 77),
             Color.fromARGB(255, 0, 89, 116),
           ],
@@ -31,7 +31,7 @@ class GradientContainer extends StatelessWidget {
         ),
       ),
       child: const Center(
-        child: StyledText(),
+        child: StyledText('Fak 🌟!'),
       ),
     );
   }
