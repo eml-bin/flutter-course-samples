@@ -15,11 +15,38 @@ void main() {
   runApp(
     const MaterialApp(
       home: Scaffold(
-        backgroundColor: Color.fromARGB(255, 255, 60, 0),
-        body: Center(
-          child: Text('Hallo Waaarld!'),
-        ),
+        body: GradientContainer(),
       ),
     ),
   );
+}
+
+// GradientContainer. Widget for separate Gradient background of screen
+//    * StatelessWidget. Flutter class for built a widget
+class GradientContainer extends StatelessWidget {
+  const GradientContainer({super.key});
+
+  // build method automatically receive by Flutter a values of context
+  // context. Object that containts useful information
+  @override
+  Widget build(context) {
+    return Container(
+      decoration: const BoxDecoration(
+        gradient: LinearGradient(
+          colors: [
+            Color.fromARGB(255, 0, 77, 77),
+            Color.fromARGB(255, 0, 89, 116),
+          ],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+        ),
+      ),
+      child: const Center(
+        child: Text(
+          'Hallo Wald!',
+          style: TextStyle(fontSize: 28, color: Colors.white),
+        ),
+      ),
+    );
+  }
 }

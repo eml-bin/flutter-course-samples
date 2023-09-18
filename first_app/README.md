@@ -111,3 +111,23 @@ Examples:
 - MaterialApp -> MaterialApp -> Widget -> Object
 
 Object. The base value on Dart
+
+🔵 Flutter Widgets III
+
+Container. Useful Widget for configuring styling and layout settings
+  * Container not support `const` parent widget 
+
+🔵 Separate Widgets
+
+For separating big widgets, Dart use classes 
+
+🔵 Dart Class
+
+* Class it's the blueprint of a Object, because Dart is an objetc-oriented language
+* Objects are Data Structures
+  * Data (properties)
+  * Functions (methods)
+
+* Objects help with organizing data & separating logic
+
+<h3>❗Objects are built bases on classes❗</h3>
