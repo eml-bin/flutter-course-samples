@@ -27,18 +27,18 @@ New knowledges about Flutter
     
 # StartScreen
 
-<main.dart>
+###`<main.dart>`
 * Wrap StartScreen in Container Widget (VScode Refactor 💡)
 
 * Use decoration argument of Container and add BoxDecoration Widget for add a gradient background to StartScreen Widget
 
-<start_screen.dart>
+###`<start_screen.dart>`
 * Wrap <Text> Widget with a <Center> Widget, <Center> Widget will try to get as much space as it can for full the entire screen
 
 * Change <Text> Widget to <Column> Widget for organize child Widget's vertically
     * Use children argument for next Widgets...
 
-<pubspec.yaml>
+###`<pubspec.yaml>`
 * Set up assets for Flutter project
     `assets:`
 
