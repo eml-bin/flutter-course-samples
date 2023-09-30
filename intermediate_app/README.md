@@ -172,3 +172,91 @@ if (activeScreen == 'questions-screen') {
     - Wrap <Column> with <SizedBox>
     - Add widht argument to <SizedBox>:
         - `width: double.infinity` - That simply means 'use as much width as you can' 
+
+--
+
+* Create new file `answer_button.dart`, it's a new component for the AnswerButton Widget for reuse in QuestionsScreen
+
+#### `<answer_button.dart>`
+
+* Create new StatelessWidget
+
+* Add argument of answerText -> Text of the button
+* Add argument of onTap -> Handler action when the button taps
+* Finish layout of AnswerButton with the argument `style`
+    * New styles concepts:
+        - `shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(35)),`
+        - `padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 40),`
+
+#### `<questions_screen.dart>` Adding questions and answers from `./data/questions.dart`
+
+* Import file `./data/questions.dart`
+* Create new variable inside build()
+    - `final currentQuestion = questions[0];`
+* Implement new variable in render layout
+* For answers we need the built-in functions of Lists `.map()` render for less code and optimization 
+    - For default `.map()` method returns a list and the `children` argument of <Column> needs a List of Widgets
+    - Add `...` before `.map()`, that allow to return the item of list out separated with a comma
+    ```
+    ...currentQuestion.answers.map((item) {
+        return AnswerButton(
+            answerText: item,
+            onTap: () {},
+        );
+    }),
+    ```
+* Add `crossAxisAlignment` argument to <Column>
+    - `crossAxisAlignment: CrossAxisAlignment.stretch,`
+* Wrap <Column> with a <Container> and use argument `margin`
+    - `margin: const EdgeInsets.all(45),`
+
+#### `<quiz_question.dart>` Add functionality to randomize answers
+
+* Create new method inside structure called `getShuffledAnswers`
+
+#### `<questions_screen.dart>` Implement the new getShuffledAnswers() method of structure
+
+* in .map() use the new method `getShuffledAnswers`
+
+#### `<questions_screen.dart>` Implement the logic to move to next question when answered succeed
+
+* add new function `answerQuestion()`
+* Use setState inside the function to dinamically change question render
+
+#### Adding a third-party package (Google Fonts)
+
+- Command for installation of a thid-party package 
+    `flutter pub add google_fonts`
+- Use this new third-party package in some text of application
+```
+Text(
+    'Flutter Quiz!',
+    style: GoogleFonts.jetBrainsMono(
+        color: Colors.white,
+        fontSize: 30
+    )
+),
+```
+
+#### Passing values across multiple Widgets (Pass the user answer) 
+
+#### `<quiz.dart>`
+
+* Create new variable called `selectedAnswers`
+    - `final List<String> selectedAnswers = [];`
+* Implement new method `chooseAnswer()`
+* Pass new method as an argument to QuestionsScreen
+
+#### `<questions_screen.dart>`
+* Implement that QuestionsScreen accepts a new argument `onSelectAnswer`
+    - `final void Function(String answer) onSelectAnswer; `
+
+* Use the widget built-in property to access the new argument `onSelectAnswer`
+* Update `answerQuestion()` with the new implementation
+
+#### Work in the Results Screen <results_screen.dart>
+
+* Construct a StatelessWidget with principal layout (UI)
+* Add this new results screen on the switchScreen (navigation)
+
+* Separate layout of `<questions_summary.dart>` in more components
