@@ -4,8 +4,10 @@ import 'package:interactive_app/widgets/expenses.dart';
 
 void main() {
   runApp(
-    const MaterialApp(
-      home: Expenses(),
+    MaterialApp(
+      // You can use a theme property in Material App
+      theme: ThemeData(useMaterial3: true),
+      home: const Expenses(),
     ),
   );
 }

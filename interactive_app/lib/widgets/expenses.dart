@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:interactive_app/widgets/expenses_list/exprenses_list.dart';
 import 'package:interactive_app/models/Expense.dart';
+import 'package:interactive_app/widgets/new_expense.dart';
 
 class Expenses extends StatefulWidget {
   const Expenses({super.key});
@@ -33,9 +34,33 @@ class _ExpensesState extends State<Expenses> {
     ),
   ];
 
+  // Overlay Function
+  void _openAddExpenseOverlay() {
+    // Flutter has multiple built-in overlays functions (show...) from `material.dart`
+    //    * In the classes that extends of State, Flutter automatically adds a global context property
+    //        * context. It's a Widget <meta> data on the widget tree
+
+    //    * The builder property normally expects a Widget builder function
+    //        * ctx. It's the context for the overlay builder
+    showModalBottomSheet(
+      context: context,
+      builder: (ctx) => const NewExpense(),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // Scaffold Widget have this appBar property for configure a appBar (top-bar) in your app
+      appBar: AppBar(
+        title: const Text("Flutter ExpenseTracker"),
+        actions: [
+          IconButton(
+            onPressed: _openAddExpenseOverlay,
+            icon: const Icon(Icons.add),
+          )
+        ],
+      ),
       body: Column(
         children: [
           const Text('Chart'),
