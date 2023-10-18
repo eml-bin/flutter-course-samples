@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:interactive_app/widgets/expenses_list/exprenses_list.dart';
-import 'package:interactive_app/models/Expense.dart';
+import 'package:interactive_app/widgets/expenses_list/expenses_list.dart';
+import 'package:interactive_app/models/expense.dart';
 import 'package:interactive_app/widgets/new_expense.dart';
 
 class Expenses extends StatefulWidget {
@@ -43,9 +43,16 @@ class _ExpensesState extends State<Expenses> {
     //    * The builder property normally expects a Widget builder function
     //        * ctx. It's the context for the overlay builder
     showModalBottomSheet(
+      isScrollControlled: true, // Make this overlay take the full abailable height
       context: context,
-      builder: (ctx) => const NewExpense(),
+      builder: (ctx) => NewExpense(onAddExpense: _addExpense),
     );
+  }
+
+  void _addExpense(Expense expense) {
+    setState(() {
+      _registeredExpenses.add(expense);
+    });
   }
 
   @override

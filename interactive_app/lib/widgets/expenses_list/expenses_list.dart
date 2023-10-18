@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:interactive_app/models/Expense.dart';
+import 'package:interactive_app/models/expense.dart';
 import 'package:interactive_app/widgets/expenses_list/expenses_item.dart';
 
 // Use for output/render a ExpensesList

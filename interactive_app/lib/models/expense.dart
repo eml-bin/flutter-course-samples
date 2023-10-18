@@ -24,9 +24,8 @@ class Expense {
     required this.amount,
     required this.date,
     required this.category,
-  }) : id = uuid.v4();
-  // The line above initialize a parameter that not receives in constructor
-
+  }) : id = uuid.v4(); // initialize a parameter that not receives in constructor
+  
   final String id;
   final String title;
   final double amount;

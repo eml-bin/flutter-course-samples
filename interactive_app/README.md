@@ -23,6 +23,13 @@ Allow to register a list of expenses and track it with a little home dashboard
     7. Create Toolbar, in this case with Scaffold Widget
     8. Using Overlays built-in functions for toolbar actions
     9. Working with Controller for User Inputs (New Expense)
+        - Overlays with Future
+        - Controllers
+        - Dropdown
+    10. Validate User-Inputs Data (New Expense)
+    11. Connect functionality, in this case: "Add new item in expenses list"
+    12. Improve some style 
+
 
 # Class Notes
 
