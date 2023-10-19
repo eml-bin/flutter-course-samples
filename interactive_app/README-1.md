@@ -29,6 +29,14 @@ Allow to register a list of expenses and track it with a little home dashboard
     10. Validate User-Inputs Data (New Expense)
     11. Connect functionality, in this case: "Add new item in expenses list"
     12. Improve some style 
+    13. Implement dismissible functionality with expenses items
+    14. Improve dismissible functionality with undo and show message when list is empty
+    15. In this case, implement global stylish with Theming
+    16. Set global configuration with Theme to Widgets
+    17. Replicate the theme to custom widgets
+    18. Add dark theme functionality
+    19. Create necessary expenses structure for chart
+    20. Import chart from project resources
 
 
 # Class Notes

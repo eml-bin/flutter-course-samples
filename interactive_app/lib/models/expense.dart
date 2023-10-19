@@ -24,8 +24,9 @@ class Expense {
     required this.amount,
     required this.date,
     required this.category,
-  }) : id = uuid.v4(); // initialize a parameter that not receives in constructor
-  
+  }) : id = uuid
+            .v4(); // initialize a parameter that not receives in constructor
+
   final String id;
   final String title;
   final double amount;
@@ -35,5 +36,31 @@ class Expense {
   // This is a getter prop
   String get formattedDate {
     return formatter.format(date);
+  }
+}
+
+class ExpenseBucket {
+  const ExpenseBucket({
+    required this.category,
+    required this.expenses,
+  });
+
+  ExpenseBucket.forCategory(List<Expense> allExpenses, this.category)
+      : expenses = allExpenses
+            .where((expense) => expense.category == category)
+            .toList();
+
+  final Category category;
+  final List<Expense> expenses;
+
+  double get totalExpenses {
+    double sum = 0;
+
+    // foreach
+    for (final expense in expenses) {
+      sum += expense.amount;
+    }
+
+    return sum;
   }
 }

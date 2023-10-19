@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:interactive_app/widgets/chart/chart.dart';
 import 'package:interactive_app/widgets/expenses_list/expenses_list.dart';
 import 'package:interactive_app/models/expense.dart';
 import 'package:interactive_app/widgets/new_expense.dart';
@@ -43,7 +44,8 @@ class _ExpensesState extends State<Expenses> {
     //    * The builder property normally expects a Widget builder function
     //        * ctx. It's the context for the overlay builder
     showModalBottomSheet(
-      isScrollControlled: true, // Make this overlay take the full abailable height
+      isScrollControlled:
+          true, // Make this overlay take the full abailable height
       context: context,
       builder: (ctx) => NewExpense(onAddExpense: _addExpense),
     );
@@ -55,8 +57,48 @@ class _ExpensesState extends State<Expenses> {
     });
   }
 
+  void _removeExpense(Expense expense) {
+
+    final expenseIndex = _registeredExpenses.indexOf(expense);
+
+    setState(() {
+      _registeredExpenses.remove(expense);
+    });
+
+    ScaffoldMessenger.of(context).clearSnackBars();
+
+    // ScaffoldMessenger with showSnackBar, shows a info message on screen
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        duration: const Duration(seconds: 3),
+        content: const Text("Expense Deleted"),
+        action: SnackBarAction(
+          label: "Undo",
+          onPressed: () {
+            // Execute setState again with the undo item and use insert
+            // for respect the position item in list
+            setState(() {
+              _registeredExpenses.insert(expenseIndex, expense);
+            });
+          },
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
+    Widget mainContent = const Center(
+      child: Text("Not expenses created. Add one"),
+    );
+
+    if (_registeredExpenses.isNotEmpty) {
+      mainContent = ExpensesList(
+        expenses: _registeredExpenses,
+        onRemoveExpense: _removeExpense,
+      );
+    }
+
     return Scaffold(
       // Scaffold Widget have this appBar property for configure a appBar (top-bar) in your app
       appBar: AppBar(
@@ -70,10 +112,8 @@ class _ExpensesState extends State<Expenses> {
       ),
       body: Column(
         children: [
-          const Text('Chart'),
-          Expanded(
-            child: ExpensesList(expenses: _registeredExpenses),
-          ),
+          Chart(expenses: _registeredExpenses),
+          Expanded(child: mainContent),
         ],
       ),
     );
