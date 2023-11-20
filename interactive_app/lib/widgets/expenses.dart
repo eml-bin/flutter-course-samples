@@ -33,6 +33,30 @@ class _ExpensesState extends State<Expenses> {
       date: DateTime.now(),
       category: Category.food,
     ),
+    Expense(
+      title: 'Sushi',
+      amount: 15.22,
+      date: DateTime.now(),
+      category: Category.food,
+    ),
+    Expense(
+      title: 'Uber',
+      amount: 15.22,
+      date: DateTime.now(),
+      category: Category.food,
+    ),
+    Expense(
+      title: 'McDonalds',
+      amount: 15.22,
+      date: DateTime.now(),
+      category: Category.food,
+    ),
+    Expense(
+      title: 'AT&T',
+      amount: 15.22,
+      date: DateTime.now(),
+      category: Category.food,
+    ),
   ];
 
   // Overlay Function
@@ -44,10 +68,12 @@ class _ExpensesState extends State<Expenses> {
     //    * The builder property normally expects a Widget builder function
     //        * ctx. It's the context for the overlay builder
     showModalBottomSheet(
+      useSafeArea: true, // Feature makes sure that modal stay away from devices features (like front-camera) that affecting UI
       isScrollControlled:
           true, // Make this overlay take the full abailable height
       context: context,
       builder: (ctx) => NewExpense(onAddExpense: _addExpense),
+      constraints: const BoxConstraints(maxWidth: double.infinity),
     );
   }
 
@@ -58,7 +84,6 @@ class _ExpensesState extends State<Expenses> {
   }
 
   void _removeExpense(Expense expense) {
-
     final expenseIndex = _registeredExpenses.indexOf(expense);
 
     setState(() {
@@ -88,6 +113,11 @@ class _ExpensesState extends State<Expenses> {
 
   @override
   Widget build(BuildContext context) {
+    // The build executes again if you rotate the device (Flutter does automatically)
+
+    // Access to context meta-information (for example: Display width)
+    final width = MediaQuery.of(context).size.width;
+
     Widget mainContent = const Center(
       child: Text("Not expenses created. Add one"),
     );
@@ -110,12 +140,25 @@ class _ExpensesState extends State<Expenses> {
           )
         ],
       ),
-      body: Column(
-        children: [
-          Chart(expenses: _registeredExpenses),
-          Expanded(child: mainContent),
-        ],
-      ),
+      body: width < 600
+          ? Column(
+              // Column -> Width: 0 - Depends on children | Height: INFINITY
+              children: [
+                Chart(expenses: _registeredExpenses),
+                Expanded(child: mainContent),
+              ],
+            )
+          : Row(
+              // Row -> Width: INFINITY | Height: 0 - Depends on children
+              children: [
+                // Expanded constraints the child to only take as much width as available
+                // limits the width available not infinity
+                Expanded(
+                  child: Chart(expenses: _registeredExpenses),
+                ),
+                Expanded(child: mainContent),
+              ],
+            ),
     );
   }
 }
